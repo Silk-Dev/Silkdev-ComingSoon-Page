@@ -2,6 +2,7 @@
 
 .container{
     margin:  0;
+    overflow: hidden;
 }
 .section{
     display: flex;
@@ -21,7 +22,7 @@
   }
   .sCmovingDiv{
     background:linear-gradient(-90deg, rgba(208, 45, 12, 0.75) 0%, rgba(217, 217, 217, 0.00) 100%);
-    
+    overflow: hidden;
     width: 200px;
     height: 200px;
     position: absolute;
@@ -31,15 +32,24 @@
     border-radius: 48% 52% 52% 48% / 45% 48% 52% 55% ;
   }
   .title{
-    background: -webkit-linear-gradient(#c6bfc3, #6c5f5a);
+    background: -webkit-linear-gradient( #917f78,#c6bfc3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 margin-bottom: 25px;
 text-align: center;
 font-family: 'Ubuntu', sans-serif;
-font-size: 3.5rem;
+font-size: 4.2vw;
 font-style: normal;
 font-weight: 700;
-line-height: 142.023%; /* 99.416px */
+line-height: 142.023%; 
 text-transform: uppercase;
   }
+.image{
+  top: 40%;
+}
+.contactSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+}

@@ -1,0 +1,22 @@
+.contact{
+    margin-top: 25px;
+   width: 150px;
+   display: flex;
+   justify-content: space-between;
+}
+.icon, .icon2, .icon3{
+    cursor: pointer;
+    color:#788082;
+    transition: color 0.7s;
+    font-size: 30px;
+}
+.icon:hover {
+    color :#0072b1 ; 
+  }
+ .icon2:hover {
+    color: #ca3584; 
+  }
+.icon3:hover {
+    color: #3b5998 
+  }
+  
