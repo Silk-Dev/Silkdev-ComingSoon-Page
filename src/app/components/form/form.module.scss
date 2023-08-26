@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,500;1,400&display=swap');
+
 .form{
     margin:auto;
     width:50%
@@ -98,13 +99,30 @@
             border-radius: 1vh;
             margin-top: 2%;
         }
+        .stepsvertical{display: flex;
+            flex-direction: row !important;
+           }
+
+            .icon{    float: left;
+                margin-inline-end: 16px;
+                }
+                .ant-steps-item-icon {
+                    background-color: #c8d1dc !important;
+                    border-color: #1677ff;}
+                    :where(.css-dev-only-do-not-override-17a39f8).ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
+                        color: rgb(235 224 224 / 88%)!important;
+                    }
+                    // :where(.css-dev-only-do-not-override-17a39f8).ant-steps .ant-steps-item-process .ant-steps-item-icon {
+                    //     background-color: #1677ff;
+                    //     border-color: #1677ff;
+                    // }
       }
       @media only screen and (min-width: 601px) {
         .mobileform  {
           display:none
         }
         .mobileslider{
-
+         display:none
         }}
         
       
