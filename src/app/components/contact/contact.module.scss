@@ -1,0 +1,21 @@
+.contact{
+    margin-top: 25px;
+   width: 150px;
+   display: flex;
+   justify-content: space-between;
+}
+.iconContainer {
+    cursor: pointer;
+    color:#788082;
+    transition: color 0.7s;
+  }
+  .iconContainer:nth-child(1):hover {
+    color: #ca3584; 
+  }
+  .iconContainer:nth-child(2):hover {
+    color: #0072b1; 
+  }
+  .iconContainer:nth-child(3):hover {
+    color: #3b5998 
+  }
+  
