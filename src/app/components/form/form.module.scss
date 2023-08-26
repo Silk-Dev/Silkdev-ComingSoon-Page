@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,500;1,400&display=swap');
+.form{
+    margin:auto;
+    width:50%
+}
+
+.customlabel{
+    color: #fff6ea !important;
+}
+.custominput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.custominputs{
+    margin-top:7%;
+    width:50%
+}
+.input{background-color: #ffffff00 !important;
+    height: 6vh;
+    color:#fff6ea
+
+}
+.input::placeholder {
+    color:#fff6ea5a
+  }
+  .h1{text-align: center;
+    color: #fff6ea;
+    font-weight: bolder;
+    font-size: 3vh;}
+  .buttons{    background-color: #fff6ea;
+    border: 1px solid #fff6ea;
+    color: black;
+    height: 6vh;
+    width: 207%;
+    border-radius: 1vh;}  
+
+.space{
+    gap:19.5% !important;
+    width: 100% !important;
+    margin-top: 2%;
+
+
+}
+.H1{color:#fff6ea !important;}
+.H2{color:#fff6ea !important;margin-top:2%}
+.textarea{
+    margin-top: 2%;
+    background-color: #ffffff00 !important;
+    
+    color:#fff6ea
+}
+.textarea::placeholder {
+    color:#fff6ea5a
+  }
+  .submit{background-color: #fff6ea;
+    border: 1px solid#fff6ea;
+    color: black;
+    height: 6vh;
+    width: 100%;
+    border-radius: 1vh;
+    margin-top: 2%;}
+    @media only screen and (max-width: 600px) {
+        .form {
+          display:none
+        }
+        .mobileform  {
+        margin:auto;
+       
+          }
+        .h1 {
+            text-align: center;
+            color: #fff6ea;
+            font-weight: bold;
+            font-size: 2.7vh;
+        }
+        .custominput{
+            display: flex;
+            flex-direction: column;
+           margin-top: 4%;
+        
+        }
+        .custominputs{
+            margin-top:0%;
+            margin-bottom: 0%;
+            width: 62%;
+        }
+        .submit{
+            background-color: #fff6ea;
+            border: 1px solid#fff6ea;
+            color: black;
+            height: 6vh;
+            width: 62%;
+            border-radius: 1vh;
+            margin-top: 2%;
+        }
+      }
+      @media only screen and (min-width: 601px) {
+        .mobileform  {
+          display:none
+        }
+        .mobileslider{
+
+        }}
+        
+      

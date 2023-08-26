@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from 'public/img/logo.png'
+import logo from '/public/img/logo.png'
 const Header = () => {
   return (
     <div>

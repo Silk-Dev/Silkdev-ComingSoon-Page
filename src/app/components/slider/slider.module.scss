@@ -1,0 +1,26 @@
+
+.announcement {
+    background: #FFF6EA;
+    color: #C1121F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 38px;
+    font-size: 0.8rem;
+    }
+.announcementtext{
+display:flex;
+align-items:center;
+margin-right:2rem
+}
+.text1 span{
+margin-right:2rem;
+
+}
+.text2 span:not(:last-child){
+margin-right:2rem
+}
+.text2 span:last-child{
+margin-right:1rem
+}
+
