@@ -34,14 +34,16 @@
     border: 1px solid #fff6ea;
     color: black;
     height: 6vh;
-    width: 207%;
+    width: 100%;
+    padding: 0 30px;
     border-radius: 1vh;}  
 
 .space{
-    gap:19.5% !important;
+    gap:3% !important;
     width: 100% !important;
     margin-top: 2%;
-
+    display: flex;
+    justify-content: space-between;
 
 }
 .H1{color:#fff6ea !important;}

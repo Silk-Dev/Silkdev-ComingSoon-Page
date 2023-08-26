@@ -10,11 +10,11 @@ const Slider = () => {
   <div className={styles.announcement}>
   <Marquee>
   <div className={`${styles.announcementtext} ${styles.text1}`}>
-  <span>The first 5 businesses to sign up will get a free website! Offer ends soon.</span>
-  <span>The first 5 businesses to sign up will get a free website! Offer ends soon.</span>
+  <p>The first <span className={styles.redText}>5 businesses</span> to sign up will get a <span className={styles.redText}>free website!</span> Offer ends soon.</p>
+  <p>The first <span className={styles.redText}>5 businesses</span> to sign up will get a <span className={styles.redText}>free website!</span> Offer ends soon.</p>
   </div>
   <div className={`${styles.announcementtext} ${styles.text2}`}>
-  <span>The first 5 businesses to sign up will get a free website! Offer ends soon.</span>
+  <p>The first <span className={styles.redText}>5 businesses</span> to sign up will get a <span className={styles.redText}>free website!</span> Offer ends soon.</p>
   
   </div>
   </Marquee>

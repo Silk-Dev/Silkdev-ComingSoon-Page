@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Space , message, Steps, theme} from 'antd';
-
+import { SendOutlined } from '@ant-design/icons'
 const { TextArea } = Input;
 
 import styles from "./form.module.scss"
@@ -82,8 +82,8 @@ const Formm: React.FC = () => {
       <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name</span>} rules={[{ required: true }]}>
         <Input className={styles.input} placeholder='John from apple'/>
       </Form.Item>
-      <Form.Item  className={styles.custominputs} name="age" label={<span className={styles.customlabel}>Age</span>} rules={[{ required: true }]}>
-        <Input className={styles.input} placeholder='John@apple.com'/>
+      <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: true }]}>
+        <Input className={styles.input} type="email" placeholder='John@apple.com'/>
       </Form.Item>
       </div>
 <h1 className={styles.H1}>I'm intersted in ...</h1>
@@ -99,7 +99,7 @@ const Formm: React.FC = () => {
 
     onClick={() => handleButtonClick(1)}
   >
-    Default Button 1
+    Showcase Website
   </button>
   <button
   className={styles.buttons}
@@ -109,7 +109,7 @@ const Formm: React.FC = () => {
   }}
     onClick={() => handleButtonClick(2)}
   >
-    Default Button 2
+    E-commerce website
   </button>
   <button
   className={styles.buttons}
@@ -119,7 +119,7 @@ const Formm: React.FC = () => {
     }}
     onClick={() => handleButtonClick(3)}
   >
-    Default Button 3
+    Brand consultation service
   </button>
  </Space>
  <h1 className={styles.H2}>Tell us more about your project</h1>
@@ -131,11 +131,11 @@ const Formm: React.FC = () => {
         type="submit"
         disabled={!submittable}
         style={{
-          cursor: submittable ? 'pointer' : 'not-allowed',
+          cursor: submittable ? 'pointer' : 'not-allowed',fontSize:"18px",fontWeight:"500"
         
         }}
       >
-        Send
+        <SendOutlined style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg"}}/>Send
       </button>
  
     </Form>
