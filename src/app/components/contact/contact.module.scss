@@ -4,18 +4,19 @@
    display: flex;
    justify-content: space-between;
 }
-.iconContainer {
+.icon, .icon2, .icon3{
     cursor: pointer;
     color:#788082;
     transition: color 0.7s;
+    font-size: 30px;
+}
+.icon:hover {
+    color :#0072b1 ; 
   }
-  .iconContainer:nth-child(1):hover {
+ .icon2:hover {
     color: #ca3584; 
   }
-  .iconContainer:nth-child(2):hover {
-    color: #0072b1; 
-  }
-  .iconContainer:nth-child(3):hover {
+.icon3:hover {
     color: #3b5998 
   }
   

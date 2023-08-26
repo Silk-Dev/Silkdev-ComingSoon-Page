@@ -4,7 +4,7 @@ import logo from 'public/img/logo.png'
 const Header = () => {
   return (
     <div>
-      <Image alt='' width={150} height={100} src={logo}/>
+      <Image alt='' width={190} height={120} src={logo}/>
     </div>
   )
 }
