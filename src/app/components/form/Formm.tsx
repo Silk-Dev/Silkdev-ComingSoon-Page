@@ -13,7 +13,36 @@ const Formm: React.FC = () => {
   const steps = [
     {
       title: 'First',
-      content: 'First-content',
+      content: (
+        <>
+        
+        <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
+          <h1 className={styles.h1}>Let's Talk About Your Needs</h1>
+        <div className={styles.custominput}>
+          <Form.Item  className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name</span>} rules={[{ required: true }]}>
+            <Input className={styles.input} placeholder='John from apple'/>
+          </Form.Item>
+          <Form.Item  className={styles.custominputs} name="age" label={<span className={styles.customlabel}>Age</span>} rules={[{ required: true }]}>
+            <Input className={styles.input} placeholder='John@apple.com'/>
+          </Form.Item>
+          <button
+            className={styles.submit}
+            type="submit"
+            disabled={!submittable}
+            style={{
+              cursor: submittable ? 'pointer' : 'not-allowed',
+            
+            }}
+          >
+            Send
+          </button>
+          </div>
+    
+    
+    
+     
+        </Form></>
+      ),
     },
     {
       title: 'Second',
@@ -73,6 +102,7 @@ const Formm: React.FC = () => {
       setSelectedButton(buttonId);
     }
   };
+ 
   return (
     <>
     <Form  className={styles.form} form={form} name="validateOnly" layout="vertical" autoComplete="off">
@@ -139,37 +169,29 @@ const Formm: React.FC = () => {
       </button>
  
     </Form>
-    <Form  className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
     
-    
-     <h1 className={styles.h1}>Let's Talk About Your Needs</h1>
-      <div className={styles.custominput}>
-      <Form.Item  className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name</span>} rules={[{ required: true }]}>
-        <Input className={styles.input} placeholder='John from apple'/>
-      </Form.Item>
-      <Form.Item  className={styles.custominputs} name="age" label={<span className={styles.customlabel}>Age</span>} rules={[{ required: true }]}>
-        <Input className={styles.input} placeholder='John@apple.com'/>
-      </Form.Item>
-      <button
-        className={styles.submit}
-        type="submit"
-        disabled={!submittable}
-        style={{
-          cursor: submittable ? 'pointer' : 'not-allowed',
-        
-        }}
-      >
-        Send
-      </button>
+  <div className={styles.mobileslider}>
+  <Steps className={styles.stepsvertical} current={current} items={items} />
+      <div  style={contentStyle}>{steps[current].content}</div>
+      <div  style={{ marginTop: 24 }}>
+        {current < steps.length - 1 && (
+          <Button type="primary" onClick={() => next()}>
+            Next
+          </Button>
+        )}
+        {current === steps.length - 1 && (
+          <Button type="primary" onClick={() => message.success('Processing complete!')}>
+            Done
+          </Button>
+        )}
+        {current > 0 && (
+          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+            Previous
+          </Button>
+        )}
       </div>
-
-
-
- 
-    </Form>
-    <div className={styles.mobileslider}>
-
-    </div>
+</div>
+  
     {/* <div className={styles.mobileform}>
     <p>hello</p>
     </div> */}

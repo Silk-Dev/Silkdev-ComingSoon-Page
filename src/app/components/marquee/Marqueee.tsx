@@ -1,9 +1,9 @@
 "use client";
 import React from 'react'
-import styles from'./slider.module.scss'
+import styles from'./marquee.module.scss'
 import { motion } from 'framer-motion';
 import Marquee from "react-fast-marquee";
-const Slider = () => {
+const Marqueee = () => {
     
   return (
 
@@ -22,4 +22,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default Marqueee
