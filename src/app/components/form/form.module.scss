@@ -82,7 +82,7 @@
         .custominput{
             display: flex;
             flex-direction: column;
-           margin-top: 4%;
+           margin-top:10%;
         
         }
         .custominputs{
@@ -104,8 +104,9 @@
             width: 70%;
             margin-top: 6%;
             margin-left: 15%;
+          
            }
-           
+        
 
             .icon{    float: left;
                 margin-inline-end: 16px;
@@ -136,9 +137,17 @@
                             border-radius: 1vh;}
                             .mobileslider{
                               
-    margin-top: 14%;
+                             margin-top: 14%;
 
                                }
+                               .H2{text-align: left;
+                                margin-top: 13%;
+                                margin-left: 15%;}
+                                .textarea{
+                                    margin-top: 8%;
+    margin-bottom: 2%;
+    width: 70%;
+                                }
 
       }
       @media only screen and (min-width: 601px) {

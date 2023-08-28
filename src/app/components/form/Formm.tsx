@@ -167,6 +167,7 @@ const Formm: React.FC = () => {
           navArrowColor: '#163CFF',
           navContentMaxWidth: 100,
           descriptionMaxWidth: 100,
+          
         },
       },
     }}
@@ -256,7 +257,7 @@ const Formm: React.FC = () => {
    </Form>
  }
  {step =='three' &&
-   <div>
+   <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
     <h1 className={styles.H2}>Tell us more about your project</h1>
    <TextArea className={styles.textarea}rows={6} placeholder="Something about your great idea" maxLength={255} />
    <button
@@ -268,7 +269,7 @@ const Formm: React.FC = () => {
    >
      <SendOutlined style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg"}}/>Send
    </button>
-   </div>
+   </Form>
  }
       </div>
       {/* <div  style={{ marginTop: 24 }}>
