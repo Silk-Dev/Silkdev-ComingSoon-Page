@@ -100,8 +100,13 @@
             margin-top: 2%;
         }
         .stepsvertical{display: flex;
-            flex-direction: row !important;
+            display: flex !important;
+    flex-direction: row !important;
+    width: 82%;
+       margin-top: 6%;
+    margin-left: 6%;
            }
+           
 
             .icon{    float: left;
                 margin-inline-end: 16px;
@@ -109,13 +114,34 @@
                 .ant-steps-item-icon {
                     background-color: #c8d1dc !important;
                     border-color: #1677ff;}
-                    :where(.css-dev-only-do-not-override-17a39f8).ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
-                        color: rgb(235 224 224 / 88%)!important;
-                    }
-                    // :where(.css-dev-only-do-not-override-17a39f8).ant-steps .ant-steps-item-process .ant-steps-item-icon {
-                    //     background-color: #1677ff;
-                    //     border-color: #1677ff;
-                    // }
+                    .H1{text-align: left;
+                       
+                        
+                        margin-left: 11%;}
+                        .space{
+                            gap: 13px !important;
+                            width: 62% !important;
+                            margin-top: 7%;
+                            margin-left: 19%;
+                            display: flex;
+                           
+                            justify-content: space-between;
+                        
+                        }
+                        .buttons{    background-color: #fff6ea;
+                            border: 1px solid #fff6ea;
+                            color: black;
+                            height: 6vh;
+                            text-align: left;
+                            width: 100%;
+                            padding: 0 14px;
+                            border-radius: 1vh;}
+                            .mobileslider{
+                              
+    margin-top: 14%;
+
+                               }
+
       }
       @media only screen and (min-width: 601px) {
         .mobileform  {

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Space , message, Steps, theme} from 'antd';
+import { Form,ConfigProvider, Input, Button, Space , message, Steps, theme} from 'antd';
 import { SendOutlined } from '@ant-design/icons'
 const { TextArea } = Input;
 
@@ -47,6 +47,7 @@ const Formm: React.FC = () => {
     backgroundColor: token.colorFillAlter,
     marginTop: 16,
   };
+
 
   const values = Form.useWatch([], form);
  
@@ -146,11 +147,37 @@ const Formm: React.FC = () => {
     </Form>
     
   <div className={styles.mobileslider}>
-  <Steps className={styles.stepsvertical} current={current} items={items} />
+  <ConfigProvider
+    theme={{
+      components: {
+        Steps: {
+          colorText:'#FFF6EA',
+          
+          colorPrimary:'#BB3E03',
+          titleLineHeight: 20,
+          customIconSize: 40,
+          customIconTop: 0,
+          customIconFontSize: 32,
+          iconSize: 20,
+          iconTop: 0, // magic for ui experience
+          iconFontSize: 12,
+          iconSizeSM: 16,
+          dotSize: 20,
+          dotCurrentSize: 24,
+          navArrowColor: '#163CFF',
+          navContentMaxWidth: 100,
+          descriptionMaxWidth: 100,
+        },
+      },
+    }}
+  >
+  <h1 className={styles.h1}>Let's Talk About Your Needs</h1> 
+
+  <Steps responsive={false }className={styles.stepsvertical} current={current} items={items} /></ConfigProvider>
       <div  style={contentStyle}>
       {step =='one' &&
    <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
-   <h1 className={styles.h1}>Let's Talk About Your Needs</h1>
+   
  <div className={styles.custominput}>
    <Form.Item  className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name</span>} rules={[{ required: true }]}>
      <Input className={styles.input} placeholder='John from apple'/>
@@ -174,7 +201,7 @@ const Formm: React.FC = () => {
  </Form>
  }
  {step =='two' &&
- <>
+ <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
    <h1 className={styles.H1}>I'm intersted in ...</h1>
  <Space wrap className={styles.space}>
   <button
@@ -226,7 +253,7 @@ const Formm: React.FC = () => {
    >
      Next
    </button>
-   </>
+   </Form>
  }
  {step =='three' &&
    <div>
