@@ -4,10 +4,14 @@ import { Form,ConfigProvider, Input, Button, Space , message, Steps, theme} from
 import { SendOutlined } from '@ant-design/icons'
 import styles from "./form.module.scss"
 import { SendEmail } from '@/actions/SendEmail';
+import SubMsg from '../subMsg/SubMsg';
+
 const { TextArea } = Input;
 const Formm: React.FC = () => {
   const [form] = Form.useForm();
   const [submittable, setSubmittable] = useState(false);
+  const [viewForm, setViewForm] = useState(true);
+  const [isError, setError] = useState(false);
   const [option, setOptions] = useState(0);
   const [step, setStep] = useState('one');
   const [formData, setFormData] = useState({
@@ -60,14 +64,21 @@ const Formm: React.FC = () => {
   
   const handleSubmit= async () => {
     console.log('data',formData);
+    
     const { data, error } = await SendEmail(formData);
 
           if (error) {
             console.log(error);
-            
+            setViewForm(false);
+            setError(true)
             return;
           }
-          console.log("Email sent successfully!");
+          else {
+            console.log("Email sent successfully!");
+            setError(false)
+            setViewForm(false);
+            
+          }
     if (option > 0){
       setStep('three');
       setCurrent(current + 1);
@@ -93,95 +104,99 @@ const Formm: React.FC = () => {
  
   return (
     <>
-    <Form  className={styles.form} form={form} name="validateOnly" layout="vertical" autoComplete="off">
-      <h1 className={styles.h1}>Let's Talk About Your Needs</h1>
-      <div className={styles.custominput}>
-      <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: false }]}>
-        <Input className={styles.input} placeholder='John from apple'
-        value={formData.name}
-        name="name"
-        onChange={handleChange}/>
-      </Form.Item>
-      <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: false }]}>
-        <Input className={styles.input} type="email" placeholder='John@apple.com'
-        value={formData.email}
-        name="email"
-        onChange={handleChange}/>
-      </Form.Item>
-      </div>
+{viewForm && 
+   <Form  className={styles.form} form={form} name="validateOnly" layout="vertical" autoComplete="off">
+   <h1 className={styles.h1}>Let's Talk About Your Needs</h1>
+   <div className={styles.custominput}>
+   <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: false }]}>
+     <Input className={styles.input} placeholder='John from apple'
+     value={formData.name}
+     name="name"
+     onChange={handleChange}/>
+   </Form.Item>
+   <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: false }]}>
+     <Input className={styles.input} type="email" placeholder='John@apple.com'
+     value={formData.email}
+     name="email"
+     onChange={handleChange}/>
+   </Form.Item>
+   </div>
 <h1 className={styles.H1}>I'm intersted in ...</h1>
- <Space wrap className={styles.space}>
-  <button
-  value={formData.project}
-  name="project"
-  className={styles.buttons}
-  onChange={handleChange}
-  style={{
-    backgroundColor: selectedButton === 1 ? "#fff6ea" : "transparent",
-    color: selectedButton === 1 ? "black" : "#fff6ea", 
-  }}
+<Space wrap className={styles.space}>
+<button
+value={formData.project}
+name="project"
+className={styles.buttons}
+onChange={handleChange}
+style={{
+ backgroundColor: selectedButton === 1 ? "#fff6ea" : "transparent",
+ color: selectedButton === 1 ? "black" : "#fff6ea", 
+}}
 
-    onClick={() => handleButtonClick(1,"showcase")}
-  >
-    Showcase Website
-  </button>
-  <button
-  className={styles.buttons}
-   value="commerce"
-   name="project"
-   onChange={handleChange}
-   style={{
-    backgroundColor: selectedButton === 2 ? "#fff6ea" : "transparent",
-    color: selectedButton === 2 ? "black" : "#fff6ea",
-  }}
-    onClick={() => handleButtonClick(2,"commerce")}
-  >
-    E-commerce website
-  </button>
-  <button
-    className={styles.buttons}
-    value={formData.project}
-    name="project"
-    onChange={handleChange}
-    style={{
-      backgroundColor: selectedButton === 3 ? "white" : "transparent",
-      color: selectedButton === 3 ? "black" : "white",
-    }}
-    onClick={() => handleButtonClick(3,"branding")}
-  >
-    Brand consultation service
-  </button>
- </Space>
- <h1 className={styles.H2}>Tell us more about your project</h1>
- <TextArea 
-    className={styles.textarea}
-    rows={6} placeholder="Something about your great idea" 
-    maxLength={255} 
-    name="msg"
-    value={formData.msg}
-    onChange={handleChange}
-  />
+ onClick={() => handleButtonClick(1,"showcase")}
+>
+ Showcase Website
+</button>
+<button
+className={styles.buttons}
+value="commerce"
+name="project"
+onChange={handleChange}
+style={{
+ backgroundColor: selectedButton === 2 ? "#fff6ea" : "transparent",
+ color: selectedButton === 2 ? "black" : "#fff6ea",
+}}
+ onClick={() => handleButtonClick(2,"commerce")}
+>
+ E-commerce website
+</button>
+<button
+ className={styles.buttons}
+ value={formData.project}
+ name="project"
+ onChange={handleChange}
+ style={{
+   backgroundColor: selectedButton === 3 ? "white" : "transparent",
+   color: selectedButton === 3 ? "black" : "white",
+ }}
+ onClick={() => handleButtonClick(3,"branding")}
+>
+ Brand consultation service
+</button>
+</Space>
+<h1 className={styles.H2}>Tell us more about your project</h1>
+<TextArea 
+ className={styles.textarea}
+ rows={6} placeholder="Something about your great idea" 
+ maxLength={255} 
+ name="msg"
+ value={formData.msg}
+ onChange={handleChange}
+/>
 
- 
- <button
- className={styles.submit}
-        type="submit"
-        value={formData.project}
-        onChange={handleChange}
-        onClick={handleSubmit}
-        disabled={!submittable}
-        style={{
-          cursor: submittable ? 'pointer' : 'not-allowed',fontSize:"18px",fontWeight:"500"
-        
-        }}
-      >
-        <SendOutlined style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg"}}/>Send
-      </button>
- 
-    </Form>
+
+<button
+className={styles.submit}
+     type="submit"
+     value={formData.project}
+     onChange={handleChange}
+     onClick={handleSubmit}
+     disabled={!submittable}
+     style={{
+       cursor: submittable ? 'pointer' : 'not-allowed',fontSize:"18px",fontWeight:"500"
+     
+     }}
+   >
+     <SendOutlined style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg"}}/>Send
+   </button>
+
+ </Form>
+}
+
     
   <div className={styles.mobileslider}>
-  <ConfigProvider
+    {viewForm &&
+    <ConfigProvider
     theme={{
       components: {
         Steps: {
@@ -208,8 +223,10 @@ const Formm: React.FC = () => {
   <h1 className={styles.h1}>Let's Talk About Your Needs</h1> 
 
   <Steps responsive={false }className={styles.stepsvertical} current={current}  /></ConfigProvider>
+    }
+  
       <div  style={contentStyle}>
-      {step =='one' &&
+ {viewForm &&  step =='one' &&
    <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
    
  <div className={styles.custominput}>
@@ -240,7 +257,7 @@ const Formm: React.FC = () => {
    </div>
  </Form>
  }
- {step =='two' &&
+ {viewForm && step =='two' &&
  <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
    <h1 className={styles.H1}>I'm intersted in ...</h1>
  <Space wrap className={styles.space}>
@@ -299,7 +316,7 @@ const Formm: React.FC = () => {
    </button>
    </Form>
  }
- {step =='three' &&
+ {viewForm && step =='three' &&
    <div>
     <h1 className={styles.H2}>Tell us more about your project</h1>
    <TextArea className={styles.textarea}rows={6} placeholder="Something about your great idea" maxLength={255} 
@@ -321,7 +338,9 @@ const Formm: React.FC = () => {
  }
       </div>
 </div>
-  
+  {!viewForm &&
+  <SubMsg result={isError}/>
+  }
    
     </>
   );
