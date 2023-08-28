@@ -206,7 +206,7 @@ const Formm: React.FC = () => {
  <Space wrap className={styles.space}>
   <button
   className={styles.buttons}
-  style={{
+  style={{width:' 100%',
     backgroundColor: selectedButton === 1 ? "#fff6ea" : "transparent",
    
     
