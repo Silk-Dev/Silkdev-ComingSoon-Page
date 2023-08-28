@@ -85,10 +85,10 @@ const Formm: React.FC = () => {
     <Form  className={styles.form} form={form} name="validateOnly" layout="vertical" autoComplete="off">
       <h1 className={styles.h1}>Let's Talk About Your Needs</h1>
       <div className={styles.custominput}>
-      <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name</span>} rules={[{ required: true }]}>
+      <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: false }]}>
         <Input className={styles.input} placeholder='John from apple'/>
       </Form.Item>
-      <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: true }]}>
+      <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: false }]}>
         <Input className={styles.input} type="email" placeholder='John@apple.com'/>
       </Form.Item>
       </div>
@@ -179,10 +179,10 @@ const Formm: React.FC = () => {
    <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
    
  <div className={styles.custominput}>
-   <Form.Item  className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name</span>} rules={[{ required: true }]}>
+   <Form.Item  className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: false }]}>
      <Input className={styles.input} placeholder='John from apple'/>
    </Form.Item>
-   <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: true }]}>
+   <Form.Item  className={styles.custominputs}  name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: false }]}>
         <Input className={styles.input} type="email" placeholder='John@apple.com'/>
       </Form.Item>
    <button
