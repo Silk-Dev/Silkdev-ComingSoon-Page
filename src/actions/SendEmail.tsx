@@ -4,7 +4,7 @@ import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/app/lib/utils";
 import EmailTemplate from "@/app/components/email-template";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('re_T9FLPtRj_MR1uhhkiryn2fyeEZTMNFx1v');
 
 export const SendEmail = async (formData: any) => {
   const name = formData.name;
