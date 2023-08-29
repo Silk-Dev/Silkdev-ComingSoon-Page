@@ -10,6 +10,7 @@ const SubMsg = (props:any) => {
   return (
     <div className={styles.container} >
         {!error &&
+
         <div className={styles.content}>
           <Image width={220} height={100} alt='' src={seccess} />
           <p className={styles.textMsg}>Thank you for reaching out to us !
@@ -17,6 +18,7 @@ const SubMsg = (props:any) => {
           </p>
         </div>}
         {error &&
+
         <div className={styles.content}>
           <Image width={220} height={100} alt='' src={error} />
           <p className={styles.textMsg}>Oups !, it seems there was an issue with submitting your message
