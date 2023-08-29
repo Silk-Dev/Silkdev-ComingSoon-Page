@@ -155,11 +155,12 @@ const Formm: React.FC = () => {
           
           colorPrimary:'#BB3E03',
           titleLineHeight: 20,
+        
           customIconSize: 40,
           customIconTop: 0,
           customIconFontSize: 32,
           iconSize: 20,
-          iconTop: 0, // magic for ui experience
+          iconTop: 0,
           iconFontSize: 12,
           iconSizeSM: 16,
           dotSize: 20,
