@@ -2,14 +2,11 @@
 import React from "react";
 import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/app/lib/utils";
-import  EmailTemplate  from "@/app/components/email-template";
+import EmailTemplate from "@/app/components/email-template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const SendEmail = async (formData: any) => {
-  
-    console.log('formData',formData);
-
   const name = formData.name;
   const email = formData.email;
   const project = formData.project;
@@ -35,10 +32,10 @@ export const SendEmail = async (formData: any) => {
       subject: "Message from contact form",
       reply_to: email,
       react: React.createElement(EmailTemplate, {
-        name:name,
-        email:email,
-        project:project,
-        msg:msg
+        name: name,
+        email: email,
+        project: project,
+        msg: msg
       }),
     });
   } catch (error: unknown) {
