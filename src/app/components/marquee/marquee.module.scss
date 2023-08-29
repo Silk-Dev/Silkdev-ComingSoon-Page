@@ -1,4 +1,3 @@
-
 .announcement {
     background: #FFF6EA;
     color: #000;
@@ -6,27 +5,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 50px;
     font-size: 1.1rem;
-    }
-.announcementtext{
-display:flex;
-align-items:center;
-margin-right:2rem
+    position: fixed;
+    top: 0;
+    z-index: 9999;
 }
-.redText{
+
+.announcementtext {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem
+}
+
+.redText {
     color: #C1121F;
     font-weight: 600;
 }
-.text1 p{
-margin-right:2rem;
+
+.text1 p {
+    margin-right: 2rem;
 
 }
-.text2 p:not(:last-child){
-margin-right:2rem
-}
-.text2 p:last-child{
-margin-right:1rem
+
+.text2 p:not(:last-child) {
+    margin-right: 2rem
 }
 
 @media only screen and (max-width: 600px) {
@@ -47,4 +50,5 @@ margin-right:1rem
     .announcementmobile  {
       display:none
     }
+
 }

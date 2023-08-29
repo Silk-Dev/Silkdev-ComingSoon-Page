@@ -1,65 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,500;1,400&display=swap');
 
-.form{
-    margin:auto;
-    width:50%
+.form {
+    margin: auto;
+    width: 50%
 }
 
-.customlabel{
+.customlabel {
     color: #fff6ea !important;
 }
-.custominput{
+
+.custominput {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 
 }
-.custominputs{
-    margin-top:7%;
-    width:50%
-}
-.input{background-color: #ffffff00 !important;
-    height: 6vh;
-    color:#fff6ea
 
+.custominputs {
+    margin-top: 7%;
+    width: 50%
 }
+
+.input {
+    background-color: #ffffff00 !important;
+    height: 6vh;
+    color: #fff6ea
+}
+
 .input::placeholder {
-    color:#fff6ea5a
-  }
-  .h1{text-align: center;
+    color: #fff6ea5a
+}
+
+.h1 {
+    text-align: center;
     color: #fff6ea;
     font-weight: bolder;
     margin-top: 30px;
-    font-size: 3vh;}
-  .buttons{    background-color: #fff6ea;
+    font-size: 3vh;
+}
+.buttons{    background-color: #fff6ea;
+
     border: 1px solid #fff6ea;
     color: black;
     height: 6vh;
     width: 100%;
     padding: 0 30px;
-    border-radius: 1vh;}  
+    border-radius: 1vh;
+}
 
-.space{
-    gap:3% !important;
+.space {
+    gap: 3% !important;
     width: 100% !important;
     margin-top: 2%;
     display: flex;
     justify-content: space-between;
 
 }
-.H1{color:#fff6ea !important;}
-.H2{color:#fff6ea !important;margin-top:2%}
-.textarea{
+
+.H1 {
+    color: #fff6ea !important;
+}
+
+.H2 {
+    color: #fff6ea !important;
+    margin-top: 2%
+}
+
+.textarea {
     margin-top: 2%;
     background-color: #ffffff00 !important;
-    
-    color:#fff6ea
+    padding-top: 12px;
+
+    color: #fff6ea
 }
+
 .textarea::placeholder {
-    color:#fff6ea5a
-  }
-  .submit{background-color: #fff6ea;
+    color: #fff6ea5a
+}
+
+.submit {
+    background-color: #fff6ea;
     border: 1px solid#fff6ea;
     color: black;
     height: 6vh;

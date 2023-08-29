@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Form,ConfigProvider, Input, Button, Space , message, Steps, theme} from 'antd';
+
 import { SendOutlined } from '@ant-design/icons'
 import styles from "./form.module.scss"
 import { SendEmail } from '@/actions/SendEmail';
@@ -22,7 +23,7 @@ const Formm: React.FC = () => {
     msg: '',
   });
   const [selectedButton, setSelectedButton] = useState(null);
-  
+
   const steps = [
     {
       title: 'First',
@@ -61,10 +62,10 @@ const Formm: React.FC = () => {
 
 
   const values = Form.useWatch([], form);
- 
-  
 
- useEffect(() => {
+
+
+  useEffect(() => {
     form.validateFields({ validateOnly: true }).then(
       () => {
         setSubmittable(true);
@@ -73,9 +74,9 @@ const Formm: React.FC = () => {
         setSubmittable(false);
       },
     );
-    console.log('val',values);
+    console.log('val', values);
     console.log(submittable);
-    
+
   }, [values]);
 
   const handleChange = (event:any) => {
@@ -88,7 +89,6 @@ const Formm: React.FC = () => {
   };
   
   const handleSubmit= async () => {
-    console.log('data',formData);
     
     const { data, error } = await SendEmail(formData);
 
@@ -120,13 +120,14 @@ const Formm: React.FC = () => {
     }));
     if (buttonId === selectedButton) {
       
+
       setSelectedButton(null);
     } else {
-     
+
       setSelectedButton(buttonId);
     }
   };
- 
+
   return (
     <>
 {viewForm && 
@@ -367,6 +368,7 @@ onChange={handleChange}/>
   <SubMsg result={isError}/>
   }
    
+
     </>
   );
 };
