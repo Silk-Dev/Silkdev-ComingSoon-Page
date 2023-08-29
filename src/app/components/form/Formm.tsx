@@ -222,7 +222,7 @@ className={styles.submit}
   >
   <h1 className={styles.h1}>Let's Talk About Your Needs</h1> 
 
-  <Steps responsive={false }className={styles.stepsvertical} current={current}  /></ConfigProvider>
+  <Steps responsive={false}className={styles.stepsvertical} current={current}  /></ConfigProvider>
     }
   
       <div  style={contentStyle}>
