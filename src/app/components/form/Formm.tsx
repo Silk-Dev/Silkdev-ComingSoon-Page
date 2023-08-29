@@ -5,6 +5,7 @@ import { SendOutlined } from '@ant-design/icons'
 import styles from "./form.module.scss"
 import { SendEmail } from '@/actions/SendEmail';
 import SubMsg from '../subMsg/SubMsg';
+import { log } from 'console';
 
 const { TextArea } = Input;
 const Formm: React.FC = () => {
@@ -21,10 +22,34 @@ const Formm: React.FC = () => {
     msg: '',
   });
   const [selectedButton, setSelectedButton] = useState(null);
+  
+  const steps = [
+    {
+      title: 'First',
+      content: 'first-content',
+    },
+    {
+      title: 'Second',
+      content: 'Second-content',
+    },
+    {
+      title: 'Last',
+      content: 'Last-content',
+    },
+  ];
 
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
 
+  const next = () => {
+    setCurrent(current + 1);
+  };
+
+  const prev = () => {
+    setCurrent(current - 1);
+  };
+
+  const items = steps.map((item) => ({ key: item.title, title: item.title }));
 
   const contentStyle: React.CSSProperties = {
     lineHeight: '260px',
@@ -187,7 +212,7 @@ className={styles.submit}
      
      }}
    >
-     <SendOutlined style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg"}}/>Send
+     <SendOutlined style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg",marginBottom:"100px"}}/>Send
    </button>
 
  </Form>
@@ -222,7 +247,7 @@ className={styles.submit}
   >
   <h1 className={styles.h1}>Let's Talk About Your Needs</h1> 
 
-  <Steps responsive={false }className={styles.stepsvertical} current={current}  /></ConfigProvider>
+  <Steps responsive={false}className={styles.stepsvertical} current={current} items={items}  /></ConfigProvider>
     }
   
       <div  style={contentStyle}>
@@ -248,7 +273,7 @@ className={styles.submit}
      disabled={!submittable}
      onClick={()=>{setStep('two');setCurrent(current + 1);}}
      style={{
-       cursor: submittable ? 'pointer' : 'not-allowed',
+       cursor: submittable ? 'pointer' : 'not-allowed',marginBottom:"100px",
      
      }}
    >
@@ -308,7 +333,7 @@ className={styles.submit}
      disabled={!submittable}
      onClick={()=>{setStep('three');setCurrent(current + 1);}}
      style={{
-       cursor: submittable ? 'pointer' : 'not-allowed',
+       cursor: submittable ? 'pointer' : 'not-allowed',marginBottom:"100px",marginTop:"30px",
      
      }}
    >
@@ -317,24 +342,24 @@ className={styles.submit}
    </Form>
  }
  {viewForm && step =='three' &&
-   <div>
-    <h1 className={styles.H2}>Tell us more about your project</h1>
-   <TextArea className={styles.textarea}rows={6} placeholder="Something about your great idea" maxLength={255} 
-    name="msg"
-    value={formData.msg}
-    onChange={handleChange}/>
-   <button
-     className={styles.submit}
-     type="submit"
-        style={{
-          cursor: submittable ? 'pointer' : 'not-allowed',fontSize:"18px",fontWeight:"500"
-        }}
-   >
-     <SendOutlined value={formData.project} disabled={!submittable}
-        onChange={handleChange}
-        onClick={handleSubmit} style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg"}}/>Send
-   </button>
-   </div>
+ <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
+ <h1 className={styles.H2}>Tell us more about your project</h1>
+<TextArea className={styles.textarea}rows={6} placeholder="Something about your great idea" maxLength={255} 
+name="msg"
+value={formData.msg}
+onChange={handleChange}/>
+<button
+  className={styles.submit}
+  type="submit"
+     style={{
+       cursor: submittable ? 'pointer' : 'not-allowed',fontSize:"18px",fontWeight:"500"
+     }}
+>
+  <SendOutlined onChange={handleChange}
+        onClick={handleSubmit} style={{marginRight:'10px',fontSize:"20px",rotate:"-35deg",marginBottom:"100px"}}/>Send
+</button>
+</Form>
+
  }
       </div>
 </div>
