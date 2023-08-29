@@ -30,6 +30,7 @@
   .h1{text-align: center;
     color: #fff6ea;
     font-weight: bolder;
+    margin-top: 30px;
     font-size: 3vh;}
   .buttons{    background-color: #fff6ea;
     border: 1px solid #fff6ea;
@@ -136,9 +137,18 @@
                             border-radius: 1vh;}
                             .mobileslider{
                               
-    margin-top: 14%;
+                                margin-top: 14%;
+   
+                                  }
+                               .H2{text-align: left;
+                                margin-top: 13%;
+                                margin-left: 15%;}
+                                .textarea{
+                                    margin-top: 8%;
+    margin-bottom: 2%;
+    width: 70%;
+                                }
 
-                               }
 
       }
       @media only screen and (min-width: 601px) {
@@ -147,7 +157,13 @@
         }
         .mobileslider{
          display:none
-        }}
+        }
+}
+@media only screen and (max-width: 601px) {
+.h1{
+    font-size: 2vh;
+}
+}
 
         @media only screen and (min-width: 602px) and (max-width: 1200px)  {
 
