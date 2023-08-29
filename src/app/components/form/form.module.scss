@@ -36,11 +36,11 @@
     text-align: center;
     color: #fff6ea;
     font-weight: bolder;
+    margin-top: 30px;
     font-size: 3vh;
 }
+.buttons{    background-color: #fff6ea;
 
-.buttons {
-    background-color: #fff6ea;
     border: 1px solid #fff6ea;
     color: black;
     height: 6vh;
@@ -86,80 +86,109 @@
     height: 6vh;
     width: 100%;
     border-radius: 1vh;
+    margin-top: 2%;}
+    @media only screen and (max-width: 600px) {
+        .form {
+          display:none
+        }
+        .mobileform  {
+        margin:auto;
+       
+          }
+        .h1 {
+            text-align: center;
+            color: #fff6ea;
+            font-weight: bold;
+            font-size: 2.7vh;
+        }
+        .custominput{
+            display: flex;
+            flex-direction: column;
+           margin-top: 4%;
+        
+        }
+        .custominputs{
+            margin-top: 0%;
+            margin-bottom: 0%;
+            width: 70%;
+        }
+        .submit{
+            background-color: #fff6ea;
+    border: 1px solid #fff6ea;
+    color: black;
+    height: 6vh;
+    width: 70%;
+    border-radius: 1vh;
     margin-top: 2%;
+        }
+        .stepsvertical{display: flex !important;
+            flex-direction: row !important;
+            width: 70%;
+            margin-top: 6%;
+            margin-left: 15%;
+           }
+           
+
+            .icon{    float: left;
+                margin-inline-end: 16px;
+                }
+                .ant-steps-item-icon {
+                    background-color: #c8d1dc !important;
+                    border-color: #1677ff;}
+                    .H1{text-align: left;
+                        margin-top: 13%;
+                        margin-left: 15%;}
+                        .space{
+                            gap: 13px !important;
+                            width: 52% !important;
+                            margin-top: 7%;
+                            margin-left:15%;
+                            display: flex;
+                           
+                            justify-content: space-between;
+                        
+                        }
+                        .buttons{    background-color: #fff6ea;
+                            border: 1px solid #fff6ea;
+                            color: black;
+                            height: 6vh;
+                            text-align: left;
+                            width: 100%;
+                            padding: 0 14px;
+                            border-radius: 1vh;}
+                            .mobileslider{
+                              
+                                margin-top: 14%;
+   
+                                  }
+                               .H2{text-align: left;
+                                margin-top: 13%;
+                                margin-left: 15%;}
+                                .textarea{
+                                    margin-top: 8%;
+    margin-bottom: 2%;
+    width: 70%;
+                                }
+
+
+      }
+      @media only screen and (min-width: 601px) {
+        .mobileform  {
+          display:none
+        }
+        .mobileslider{
+         display:none
+        }
+}
+@media only screen and (max-width: 601px) {
+.h1{
+    font-size: 2vh;
+}
 }
 
-@media only screen and (max-width: 600px) {
-    .form {
-        display: none
-    }
+        @media only screen and (min-width: 602px) and (max-width: 1200px)  {
 
-    .mobileform {
-        margin: auto;
+        }
 
-    }
-
-    .h1 {
-        text-align: center;
-        color: #fff6ea;
-        font-weight: bold;
-        font-size: 2.7vh;
-    }
-
-    .custominput {
-        display: flex;
-        flex-direction: column;
-        margin-top: 4%;
-
-    }
-
-    .custominputs {
-        margin-top: 0%;
-        margin-bottom: 0%;
-        width: 62%;
-    }
-
-    .submit {
-        background-color: #fff6ea;
-        border: 1px solid#fff6ea;
-        color: black;
-        height: 6vh;
-        width: 62%;
-        border-radius: 1vh;
-        margin-top: 2%;
-    }
-
-    .stepsvertical {
-        display: flex;
-        flex-direction: row !important;
-    }
-
-    .icon {
-        float: left;
-        margin-inline-end: 16px;
-    }
-
-    .ant-steps-item-icon {
-        background-color: #c8d1dc !important;
-        border-color: #1677ff;
-    }
-
-    :where(.css-dev-only-do-not-override-17a39f8).ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title {
-        color: rgb(235 224 224 / 88%) !important;
-    }
-
-    // :where(.css-dev-only-do-not-override-17a39f8).ant-steps .ant-steps-item-process .ant-steps-item-icon {
-    //     background-color: #1677ff;
-    //     border-color: #1677ff;
-    // }
-}
-
-@media only screen and (min-width: 601px) {
-    .mobileform {
-        display: none
-    }
-
-    .mobileslider {
-        display: none
-    }
-}
+        
+      
