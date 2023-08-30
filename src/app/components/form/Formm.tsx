@@ -175,7 +175,12 @@ const Formm: React.FC = () => {
   >
   <h1 className={styles.h1}>Let's Talk About Your Needs</h1> 
 
-  <Steps responsive={false }className={styles.stepsvertical} current={current} items={items} /></ConfigProvider>
+  <Steps
+        responsive={false}
+        className={`${styles.stepsvertical} ${styles['ant-steps-item-tail']}`}
+        current={current}
+        items={items}
+      /></ConfigProvider>
       <div  style={contentStyle}>
       {step =='one' &&
    <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
