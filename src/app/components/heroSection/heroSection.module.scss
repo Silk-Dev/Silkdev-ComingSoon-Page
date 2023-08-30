@@ -53,3 +53,19 @@ text-transform: uppercase;
   justify-content: center;
   bottom: 0;
 }
+@media only screen and (max-width: 768px) {
+  .sCmovingDiv{
+    width: 120px;
+    height: 120px;
+    right: -20px;
+    top: 60%;
+  }
+  .movingDiv {
+    background:linear-gradient(100deg, rgba(208, 45, 12, 0.75) 0%, rgba(217, 217, 217, 0.00) 100%);
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    top: 22%;
+    left: -60px;
+  }
+}

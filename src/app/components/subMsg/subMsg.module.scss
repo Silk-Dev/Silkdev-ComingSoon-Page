@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:ital,wght@0,300;0,500;1,400&display=swap');
 
 .container{
-    margin: 35px 0;
+    margin: 35px 0 100px 0;
 }
 .content{
     display: flex;
@@ -16,4 +16,13 @@
     font-size: 18px;
     font-family: 'Ubuntu', sans-serif;
     // line-height: 3.5vh;
+}
+@media only screen and (max-width: 768px) {
+    .textMsg{
+        width: 80vw;
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Ubuntu', sans-serif;
+        // line-height: 3.5vh;
+    }
 }
