@@ -147,7 +147,7 @@ const Formm: React.FC = () => {
             </Form.Item>
           </div>
           <h1 className={styles.H1}>I&apos;m intersted in ...</h1>
-          <Space wrap className={styles.space}>
+          <div  className={styles.space}>
             <button
               value={formData.project}
               name="project"
@@ -188,7 +188,7 @@ const Formm: React.FC = () => {
             >
               Brand consultation service
             </button>
-          </Space>
+          </div>
           <h1 className={styles.H2}>Tell us more about your project</h1>
           <TextArea
             className={styles.textarea}
@@ -225,7 +225,7 @@ const Formm: React.FC = () => {
             theme={{
               components: {
                 Steps: {
-                  colorText: '#FFF6EA',
+                  // colorText: '#FFF6EA',
 
                   colorPrimary: '#BB3E03',
                   titleLineHeight: 20,
@@ -247,7 +247,7 @@ const Formm: React.FC = () => {
           >
             <h1 className={styles.h1}>Let&apos;s Talk About Your Needs</h1>
 
-            <Steps responsive={false} className={styles.stepsvertical} current={current} items={items} /></ConfigProvider>
+            <Steps responsive={false} style={{ color: 'red ' }} className={styles.stepsvertical} current={current} items={items} /></ConfigProvider>
         }
 
         <div style={contentStyle}>
@@ -285,7 +285,7 @@ const Formm: React.FC = () => {
           {viewForm && step == 'two' &&
             <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
               <h1 className={styles.H1}>I&apos;m intersted in ...</h1>
-              <Space wrap className={styles.space}>
+              <div  className={styles.space}>
                 <button
                   value={formData.project}
                   name="project"
@@ -327,7 +327,7 @@ const Formm: React.FC = () => {
                 >
                   Brand consultation service
                 </button>
-              </Space>
+              </div>
               <button
                 className={styles.submit}
                 type="submit"
