@@ -45,6 +45,13 @@ const Formm: React.FC = () => {
     hidden: { scale: 0.5, opacity: 0 },
     visible: { scale: 1, opacity: 1 },
   };
+
+  const rotateVariants = {
+    rotated: { rotate: 360 },
+    notRotated: { rotate: 0 },
+  };
+
+  
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
 
