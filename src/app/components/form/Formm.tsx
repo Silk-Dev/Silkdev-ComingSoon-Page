@@ -1,11 +1,17 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Form, ConfigProvider, Input, Space, Steps, theme } from 'antd';
-
-import { SendOutlined } from '@ant-design/icons'
+import { getAnalytics } from "firebase/analytics";
+import { FileOutlined, SendOutlined } from '@ant-design/icons'
 import styles from "./form.module.scss"
 import { SendEmail } from '@/actions/SendEmail';
 import SubMsg from '../subMsg/SubMsg';
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { app } from '@/app/config';
+
+
 
 const { TextArea } = Input;
 const Formm: React.FC = () => {
@@ -86,22 +92,17 @@ const Formm: React.FC = () => {
   };
 
   const handleSubmit= async () => {
-    console.log('data',formData);
     
-    const { data, error } = await SendEmail(formData);
-
-    if (error) {
-      console.log(error);
-      setViewForm(false);
-      setError(true)
-      return;
-    }
-    else {
-      console.log("Email sent successfully!");
-      setError(false)
-      setViewForm(false);
-
-    }
+    try {
+      console.log('data before storing',formData);
+      const db = getFirestore(app);
+      const docRef = await addDoc(collection(db, 'formData'), formData);
+      console.log('Document written with ID: ', docRef.id);
+  } catch (error) {
+      console.error('Error adding document: ', error);
+  }
+    
+    
     if (option > 0) {
       setStep('three');
       setCurrent(current + 1);
