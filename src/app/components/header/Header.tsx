@@ -1,10 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import logo from '/public/img/logo.png'
+import styles from './header.module.scss'
 const Header = () => {
   return (
     <div>
-      <Image  alt='' width={190} height={80} src={logo}/>
+      <Image  className={styles.img} alt=''  src={logo}/>
+   
     </div>
   )
 }
