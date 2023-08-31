@@ -22,20 +22,23 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #212529 !important;
 }
-body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-1tdx742.ant-steps-label-horizontal > div:nth-child(2) > div > div.ant-steps-item-content > div{
-  color:white;
+body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-5r1lue.ant-steps-label-horizontal > div:nth-child(3) > div > div.ant-steps-item-icon{
+  background-color: #788082 !important;
+  border: none !important;
 }
-body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-1tdx742.ant-steps-label-horizontal > div:nth-child(3) > div > div.ant-steps-item-content > div{
-  color:white;
+body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-5r1lue.ant-steps-label-horizontal > div:nth-child(2) > div > div.ant-steps-item-icon{
+  background-color: #788082 !important;
+  border: none !important;
 }
-body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-1tdx742.ant-steps-label-horizontal > div:nth-child(2) > div > div.ant-steps-item-icon > span{
-  color:#212529;
+body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-5r1lue.ant-steps-label-horizontal > div.ant-steps-item.ant-steps-item-process.ant-steps-item-active > div > div.ant-steps-item-content > div{
+  color:white !important;
 }
-body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-1tdx742.ant-steps-label-horizontal > div:nth-child(2) > div > div.ant-steps-item-icon{
-  background-color: #788082;
-  border: none;
+body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-5r1lue.ant-steps-label-horizontal > div:nth-child(2) > div > div.ant-steps-item-content > div{
+  color:white !important;
 }
-body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-1tdx742.ant-steps-label-horizontal > div:nth-child(3) > div > div.ant-steps-item-icon{
-  background-color: #788082;
-  border: none;
+body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-5r1lue.ant-steps-label-horizontal > div:nth-child(3) > div > div.ant-steps-item-content > div{
+  color:white !important;
+}
+body > main > div.form_mobileslider___Z15U > div.ant-steps.ant-steps-horizontal.form_stepsvertical__fHrPe.css-dev-only-do-not-override-5r1lue.ant-steps-label-horizontal > div.ant-steps-item.ant-steps-item-finish > div > div.ant-steps-item-content > div{
+  color:white !important;
 }
