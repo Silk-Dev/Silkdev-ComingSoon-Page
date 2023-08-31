@@ -130,13 +130,14 @@ const Formm: React.FC = () => {
         <Form className={styles.form} form={form} name="validateOnly" layout="vertical" autoComplete="off">
           <h1 className={styles.h1}>Let&apos;s Talk About Your Needs</h1>
           <div className={styles.custominput}>
-            <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: false }]}>
+            <Form.Item  className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: true }]}>
               <Input className={styles.input} placeholder='John from apple'
                 value={formData.name}
                 name="name"
+                
                 onChange={handleChange} />
             </Form.Item>
-            <Form.Item className={styles.custominputs} name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: false }]}>
+            <Form.Item className={styles.custominputs} name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: true }]}>
               <Input className={styles.input} type="email" placeholder='John@apple.com'
                 value={formData.email}
                 name="email"
@@ -251,13 +252,13 @@ const Formm: React.FC = () => {
             <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
 
               <div className={styles.custominput}>
-                <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: false }]}>
+                <Form.Item className={styles.custominputs} name="name" label={<span className={styles.customlabel}>Name & company</span>} rules={[{ required: true }]}>
                   <Input className={styles.input} placeholder='John from apple'
                     value={formData.name}
                     name="name"
                     onChange={handleChange} />
                 </Form.Item>
-                <Form.Item className={styles.custominputs} name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: false }]}>
+                <Form.Item className={styles.custominputs} name="email" label={<span className={styles.customlabel}>Email</span>} rules={[{ required: true }]}>
                   <Input className={styles.input} type="email" placeholder='John@apple.com'
                     value={formData.email}
                     name="email"
@@ -279,7 +280,7 @@ const Formm: React.FC = () => {
             </Form>
           }
           {viewForm && step == 'two' &&
-            <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
+            <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off" >
               <h1 className={styles.H1}>I&apos;m intersted in ...</h1>
               <div  className={styles.space}>
                 <button
@@ -287,7 +288,6 @@ const Formm: React.FC = () => {
                   name="project"
                   onChange={handleChange}
                   className={selectedButton === 1 ? styles.buttons : styles.notSelected}
-
                   onClick={() => { handleButtonClick(1, "showcase"); setOptions(1) }}
                 >
                   Showcase Website
