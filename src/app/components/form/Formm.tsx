@@ -7,10 +7,10 @@ import styles from "./form.module.scss"
 import SubMsg from '../subMsg/SubMsg';
 
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { app } from '@/app/config';
 
-
+const db = getFirestore(app);
 
 const { TextArea } = Input;
 const Formm: React.FC = () => {
@@ -91,16 +91,14 @@ const Formm: React.FC = () => {
   };
 
   const handleSubmit= async () => {
-    
     try {
-      console.log('data before storing',formData);
-      const db = getFirestore(app);
-      const docRef = await addDoc(collection(db, 'formData'), formData);
-      console.log('Document written with ID: ', docRef.id);
-  } catch (error) {
-      console.error('Error adding document: ', error);
-  }
-    
+      const colRef = collection(db, "formData");
+      const docRef = await addDoc(colRef, formData);
+      return docRef;
+
+    } catch (error) {
+      throw error;
+    }
     
     if (option > 0) {
       setStep('three');
