@@ -1,8 +1,9 @@
 
 .announcement {
-    background: #FFF6EA;
+    background: #ebe9e7;
     color: #000;
     font-weight: 500;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +32,8 @@ margin-right:1rem
 
 @media only screen and (max-width: 600px) {
     .announcement{
-        display:none
+        display:none;
+        width: 100%;
     }
 .announcementmobile{    background: #FFF6EA;
     color: #000000;

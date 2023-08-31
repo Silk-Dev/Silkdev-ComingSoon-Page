@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, ConfigProvider, Input, Space, Steps, theme } from 'antd';
 import { SendOutlined } from '@ant-design/icons'
 import styles from "./form.module.scss"
+import { motion } from "framer-motion"
 import SubMsg from '../subMsg/SubMsg';
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { app } from '@/app/config';
@@ -40,7 +41,10 @@ const Formm: React.FC = () => {
       content: 'Last-content',
     },
   ];
-
+   const appearVariants = {
+    hidden: { scale: 0.5, opacity: 0 },
+    visible: { scale: 1, opacity: 1 },
+  };
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
 
@@ -283,33 +287,45 @@ const Formm: React.FC = () => {
             <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off" >
               <h1 className={styles.H1}>I&apos;m intersted in ...</h1>
               <div  className={styles.space}>
-                <button
+                <motion.button
                   value={formData.project}
                   name="project"
                   onChange={handleChange}
+                  initial="hidden"
+                  animate="visible"
+                  variants={appearVariants}
+                  transition={{ duration: 0.7 }}
                   className={selectedButton === 1 ? styles.buttons : styles.notSelected}
                   onClick={() => { handleButtonClick(1, "showcase"); setOptions(1) }}
                 >
                   Showcase Website
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                   value={formData.project}
                   name="project"
                   onChange={handleChange}
+                  initial="hidden"
+                  animate="visible"
+                  variants={appearVariants}
+                  transition={{ duration: 0.7 }}
                   className={selectedButton === 2 ? styles.buttons : styles.notSelected}
                   onClick={() => { handleButtonClick(2, "commerce"); setOptions(2) }}
                 >
                   E-commerce website
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                   value={formData.project}
                   name="project"
                   onChange={handleChange}
+                  initial="hidden"
+                  animate="visible"
+                  variants={appearVariants}
+                  transition={{ duration: 0.7 }}
                   className={selectedButton === 3 ? styles.buttons : styles.notSelected}
                   onClick={() => { handleButtonClick(3, "branding"); setOptions(3) }}
                 >
                   Brand consultation service
-                </button>
+                </motion.button>
               </div>
               <button
                 className={styles.submit}
@@ -328,10 +344,17 @@ const Formm: React.FC = () => {
           {viewForm && step == 'three' &&
             <Form className={styles.mobileform} form={form} name="validateOnly" layout="vertical" autoComplete="off">
               <h1 className={styles.H2}>Tell us more about your project</h1>
+              <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={appearVariants}
+              transition={{ duration: 0.7 }}>
+                
               <TextArea className={styles.textarea} rows={6} placeholder="Something about your great idea" maxLength={255}
                 name="msg"
                 value={formData.msg}
                 onChange={handleChange} />
+              </motion.div>
               {!isSubmitted &&
           <button
           className={styles.submit}
@@ -364,7 +387,13 @@ const Formm: React.FC = () => {
         </div>
       </div>
       {!viewForm &&
-        <SubMsg result={isError} />
+       <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={appearVariants}
+              transition={{ duration: 0.7 }}>
+         <SubMsg result={isError} />
+       </motion.div>
       }
     </>
   );
