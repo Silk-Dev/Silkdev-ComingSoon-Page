@@ -4,7 +4,6 @@ import { Form, ConfigProvider, Input, Space, Steps, theme } from 'antd';
 import { getAnalytics } from "firebase/analytics";
 import { FileOutlined, SendOutlined } from '@ant-design/icons'
 import styles from "./form.module.scss"
-import { SendEmail } from '@/actions/SendEmail';
 import SubMsg from '../subMsg/SubMsg';
 
 import { initializeApp } from 'firebase/app';
