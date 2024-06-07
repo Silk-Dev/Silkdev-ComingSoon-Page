@@ -24,7 +24,7 @@ export default function RootLayout({
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','G-MFNXMTXB96');`}}></Script>
-
+        <meta name="facebook-domain-verification" content="4xtt89ssstvkmbc0mkc9dshgvbvv43" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
